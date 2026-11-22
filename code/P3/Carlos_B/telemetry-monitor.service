@@ -1,0 +1,17 @@
+[Unit]
+Description=AURORA-6 - Servicio de monitorizacion de telemetria (Miembro B)
+After=network.target
+
+[Service]
+Type=simple
+User=usuario_b
+ExecStart=/opt/aurora6/tools/telemetry-monitor.sh
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=full
+
+[Install]
+WantedBy=multi-user.target
